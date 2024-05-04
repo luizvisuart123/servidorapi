@@ -5,8 +5,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.7.18</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.senac.projetointegrador</groupId>
 	<artifactId>projetopi</artifactId>
@@ -15,38 +15,67 @@
 	<name>projetopi</name>
 	<description>Projeto Spring</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<!--Facilita a conversão de objetos de um tipo para outro 
+		(por exemplo, de DTOs para entidades JPA). 
+		Ele automatiza o mapeamento de campos com nomes correspondentes.-->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		<!--Facilita a interação com bancos de dados relacionais usando JPA (Java Persistence API).
+		Oferece métodos de consulta, paginação, ordenação e outras funcionalidades para trabalhar com entidades JPA.-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--Essa dependência inclui tudo o que você precisa para criar aplicativos web com o Spring Boot.
+		Inclui o Spring MVC, que permite criar controladores, lidar com requisições HTTP e renderizar visualizações.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!--O H2 Database é um banco de dados em memória leve e rápido.
+		É frequentemente usado para desenvolvimento e testes, pois não requer configuração complexa e pode ser executado em modo embutido.-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
+		<!--biblioteca que ajuda a reduzir a verbosidade do código Java.
+		Ele gera automaticamente getters, setters, construtores e outros métodos com base em anotações.
+		Útil para escrever código mais conciso e legível.-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!--Essa dependência inclui as bibliotecas necessárias para testes no Spring Boot.
+		Inclui o JUnit, Spring Test, Mockito e outras ferramentas para testes unitários e de integração.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-
 	</dependencies>
+
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
