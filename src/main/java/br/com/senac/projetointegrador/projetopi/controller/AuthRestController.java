@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senac.projetointegrador.projetopi.login.AuthRequest;
 import br.com.senac.projetointegrador.projetopi.model.Usuario;
-import br.com.senac.projetointegrador.projetopi.model.UsuarioRepository;
+import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import br.com.senac.projetointegrador.projetopi.service.JwtService;
 import lombok.RequiredArgsConstructor;
 

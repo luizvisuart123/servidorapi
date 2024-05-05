@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import br.com.senac.projetointegrador.projetopi.dto.UsuarioDTO;
 import br.com.senac.projetointegrador.projetopi.exception.NaoEncontradoException;
 import br.com.senac.projetointegrador.projetopi.model.Usuario;
-import br.com.senac.projetointegrador.projetopi.model.UsuarioRepository;
+import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service

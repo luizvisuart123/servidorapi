@@ -7,7 +7,10 @@ insert into usuario (
 	password, 
 	roles, 
 	username,
-	nome
+	nome,
+	peso,
+	altura,
+	nivel_atividade_fisica	
 ) VALUES (
 	false,
 	false,
@@ -17,5 +20,12 @@ insert into usuario (
 	'$2a$12$yrp1A9bCUvgGjOjY.sf4GeSmFIRUR3B.7naToAD5OuBpG/VKgG2EW',
 	'ADMIN',
 	'user_admin',
-	'Administrador'
+	'Administrador',
+	110,
+	175,
+	'Leve'
 );
+
+INSERT INTO nivel_atividade_fisica (descricao) VALUES ('Leve');
+INSERT INTO nivel_atividade_fisica (descricao) VALUES ('Moderado');
+INSERT INTO nivel_atividade_fisica (descricao) VALUES ('Intenso');

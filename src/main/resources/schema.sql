@@ -9,6 +9,28 @@ create table usuario (
 	roles varchar(255), 
 	username varchar(255), 
 	nome varchar(255), 
+	peso DOUBLE NOT NULL,
+    altura DOUBLE NOT NULL,
+    nivel_atividade_fisica VARCHAR(255) NOT NULL,
 	primary key (id)
 );
 alter table usuario add constraint UK_692bsnqxa8m9fmx7m1yc6hsui unique (email);
+
+CREATE TABLE nivel_atividade_fisica (
+    descricao VARCHAR(255) PRIMARY KEY
+);
+
+CREATE TABLE calculos_agua (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id BIGINT NOT NULL,
+    data_calculo DATE NOT NULL,
+    quantidade_ideal_agua DOUBLE NOT NULL
+);
+
+CREATE TABLE calculos_imc (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id BIGINT NOT NULL,
+    data_calculo DATE NOT NULL,
+    imc DOUBLE NOT NULL,
+    classificacao_imc VARCHAR(255) NOT NULL
+);

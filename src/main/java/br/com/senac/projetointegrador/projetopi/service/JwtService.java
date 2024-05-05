@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import br.com.senac.projetointegrador.projetopi.model.Usuario;
-import br.com.senac.projetointegrador.projetopi.model.UsuarioRepository;
+import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

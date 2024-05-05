@@ -6,12 +6,15 @@ import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import org.hibernate.annotations.Where;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import br.com.senac.projetointegrador.projetopi.enumerador.NivelAtividadeFisica;
 import br.com.senac.projetointegrador.projetopi.util.Pessoa;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,7 +32,7 @@ import lombok.Setter;
 public class Usuario extends Pessoa implements UserDetails{
 	private static final long serialVersionUID = -6555643810426575027L;
 	
-	@Column(unique = true)
+	@Column(name = "email", nullable = false, unique = true, length = 255)
     private String email;
     private String username;
     private String password;
@@ -38,6 +41,17 @@ public class Usuario extends Pessoa implements UserDetails{
     private boolean accountExpired;
     private boolean accountLocked;
     private boolean credentialsExpired;
+    
+    @Column(name = "peso", nullable = false)
+    private Double peso;
+    
+    @Column(name = "altura", nullable = false)
+    private Double altura;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nivel_atividade_fisica", nullable = false)
+    private NivelAtividadeFisica nivelAtividadeFisica;
+    
 	
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
