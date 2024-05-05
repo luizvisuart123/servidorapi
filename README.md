@@ -1,11 +1,11 @@
 
 ---
 
-# Projeto PI
+# Projeto API
 ---
 
 
-O **Projeto PI** é um aplicativo Java backend baseado em Spring Boot que utiliza um banco de dados em memória H2. Ele foi desenvolvido com as seguintes tecnologias:
+O **Projeto API** é um aplicativo Java backend baseado em Spring Boot que utiliza um banco de dados em memória H2. Ele foi desenvolvido com as seguintes tecnologias:
 
 - **Java 11**
 - **Spring Boot 2.7.18**
@@ -48,4 +48,8 @@ Lembre-se de atualizar o arquivo `pom.xml` com as dependências correspondentes.
 
 ---
 
- **"🔨 Ainda martelando e lixando, mas já estamos no aminho certo! 🔧"**
+ **"🔨 Ainda martelando e lixando, mas já estamos no caminho certo! 🔧"**
+
+
+
+ 
