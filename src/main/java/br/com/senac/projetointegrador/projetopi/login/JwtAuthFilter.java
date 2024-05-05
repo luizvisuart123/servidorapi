@@ -1,0 +1,52 @@
+package br.com.senac.projetointegrador.projetopi.login;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import br.com.senac.projetointegrador.projetopi.service.JwtService;
+import io.jsonwebtoken.io.IOException;
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+public class JwtAuthFilter extends OncePerRequestFilter{
+	private final JwtService jwtService;
+    private final UserDetailsService userDetailsService;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException, java.io.IOException {
+        final String header = request.getHeader("Authorization");
+        if (header != null && header.startsWith("Bearer ")) {
+            final String token = header.substring(7);
+            this.authenticateUserFromToken(request, token);
+        }
+        filterChain.doFilter(request, response);
+    }
+
+    private void authenticateUserFromToken(HttpServletRequest request, String token) {
+        final String username = this.jwtService.extractUsername(token);
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+        	UserDetails userDetails = this.jwtService.getUserDetails(token);
+            if (this.jwtService.isTokenValid(token, userDetails)) {
+                this.setAuthTokenOnSecurityContext(request, userDetails);
+            }
+        }
+    }
+
+    private void setAuthTokenOnSecurityContext(HttpServletRequest request, UserDetails userDetails) {
+        final var authToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+        authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+        SecurityContextHolder.getContext().setAuthentication(authToken);
+    }
+}
