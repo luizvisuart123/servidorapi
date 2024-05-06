@@ -48,9 +48,9 @@ public class Usuario extends Pessoa implements UserDetails{
     @Column(name = "altura", nullable = false)
     private Double altura;
     
-//    @Enumerated(EnumType.STRING)
-//    @Column(name = "nivel_atividade_fisica")
-//    private NivelAtividadeFisica nivelAtividadeFisica;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nivel_atividade_fisica", nullable = false)
+    private NivelAtividadeFisica nivelAtividadeFisica;
     
 	
     @Override

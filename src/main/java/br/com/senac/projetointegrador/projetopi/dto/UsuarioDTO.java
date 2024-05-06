@@ -1,5 +1,9 @@
 package br.com.senac.projetointegrador.projetopi.dto;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import br.com.senac.projetointegrador.projetopi.enumerador.NivelAtividadeFisica;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +29,8 @@ public class UsuarioDTO {
     private String roles;
     private Double peso;
     private Double altura;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nivel_atividade_fisica", nullable = false)
     private NivelAtividadeFisica nivelAtividadeFisica;	
 
 }
