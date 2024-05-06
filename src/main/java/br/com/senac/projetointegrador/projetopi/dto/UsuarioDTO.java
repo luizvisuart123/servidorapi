@@ -1,5 +1,6 @@
 package br.com.senac.projetointegrador.projetopi.dto;
 
+import br.com.senac.projetointegrador.projetopi.enumerador.NivelAtividadeFisica;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,9 +20,11 @@ public class UsuarioDTO {
 //    @Email(message = "email invalido")
     private String email;
     private String senha;
-    private String telefone;
     private String username;
     private String password;
     private String roles;
+    private Double peso;
+    private Double altura;
+    private NivelAtividadeFisica nivelAtividadeFisica;	
 
 }

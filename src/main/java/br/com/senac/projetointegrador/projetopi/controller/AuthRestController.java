@@ -13,11 +13,11 @@ import br.com.senac.projetointegrador.projetopi.model.Usuario;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import br.com.senac.projetointegrador.projetopi.service.JwtService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/login")
 @RequiredArgsConstructor
-
 public class AuthRestController {
 	private final UsuarioRepository usuarioRepository;
 	private final AuthenticationManager authenticationManager;
