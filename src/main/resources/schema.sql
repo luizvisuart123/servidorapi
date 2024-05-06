@@ -11,7 +11,6 @@ create table usuario (
 	nome varchar(255), 
 	peso DOUBLE NOT NULL,
     altura DOUBLE NOT NULL,
-    nivel_atividade_fisica VARCHAR(255) NOT NULL,
 	primary key (id)
 );
 alter table usuario add constraint UK_692bsnqxa8m9fmx7m1yc6hsui unique (email);

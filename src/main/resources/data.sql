@@ -9,8 +9,7 @@ insert into usuario (
 	username,
 	nome,
 	peso,
-	altura,
-	nivel_atividade_fisica	
+	altura
 ) VALUES (
 	false,
 	false,
@@ -22,8 +21,7 @@ insert into usuario (
 	'user_admin',
 	'Administrador',
 	110,
-	175,
-	'Leve'
+	175
 );
 
 INSERT INTO nivel_atividade_fisica (descricao) VALUES ('Leve');

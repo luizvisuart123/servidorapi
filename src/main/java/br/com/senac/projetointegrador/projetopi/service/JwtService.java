@@ -32,7 +32,6 @@ public class JwtService {
         var usuario = this.usuarioRepository.findByUsername(userDetails.getUsername());
         HashMap<String, Object> claims = new HashMap<>();
         claims.put("roles",usuario.get().getRoles());
-        claims.put("email",usuario.get().getEmail());
         final var now = LocalDateTime.now();
         return Jwts.builder()
                 .setClaims(claims)

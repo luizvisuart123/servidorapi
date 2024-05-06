@@ -1,5 +1,6 @@
 package br.com.senac.projetointegrador.projetopi.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -12,13 +13,12 @@ import br.com.senac.projetointegrador.projetopi.login.AuthRequest;
 import br.com.senac.projetointegrador.projetopi.model.Usuario;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import br.com.senac.projetointegrador.projetopi.service.JwtService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/login")
 @RequiredArgsConstructor
 public class AuthRestController {
+	
 	private final UsuarioRepository usuarioRepository;
 	private final AuthenticationManager authenticationManager;
 	private final JwtService jwtService;
