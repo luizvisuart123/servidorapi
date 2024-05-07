@@ -52,6 +52,12 @@ public class UsuarioService {
     public UsuarioDTO atualizar(UsuarioDTO usuarioDto) {
         var usuario = this.usuarioRepository.findByEmail(usuarioDto.getEmail()).orElseThrow();
         usuario.setNome(usuarioDto.getNome());
+        usuario.setEmail(usuarioDto.getEmail());
+        usuario.setPeso(usuarioDto.getPeso());
+        usuario.setRoles(usuarioDto.getRoles());
+        usuario.setNivelAtividadeFisica(usuarioDto.getNivelAtividadeFisica());
+        usuario.setPassword(usuarioDto.getPassword());
+        usuario.setAltura(usuarioDto.getAltura());
         return this.convertDto(usuarioRepository.save(usuario));
     }
     public Usuario getByUsernameEntity(String username) {
