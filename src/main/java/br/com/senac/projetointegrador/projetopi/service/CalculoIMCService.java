@@ -1,17 +1,17 @@
 package br.com.senac.projetointegrador.projetopi.service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import lombok.RequiredArgsConstructor;
 
 import br.com.senac.projetointegrador.projetopi.dto.CalculoImcDTO;
 import br.com.senac.projetointegrador.projetopi.model.CalculoIMC;
 import br.com.senac.projetointegrador.projetopi.repository.CalculoImcRepository;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -42,6 +42,12 @@ public class CalculoIMCService {
         return this.calculoImcRepository.findAll().stream()
                 .map(this::convertDto)
                 .collect(Collectors.toList());
+	}
+
+	public void excluir(Long id) {
+        var calculoImc = this.calculoImcRepository.findById(id).orElseThrow();
+        System.out.println(calculoImc);
+        this.calculoImcRepository.delete(calculoImc);
 	}
 
 }
