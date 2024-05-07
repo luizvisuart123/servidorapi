@@ -65,4 +65,10 @@ public class UsuarioService {
                 .orElseThrow(() -> new NaoEncontradoException("Usuário não encontrado"));
     }
 
+	public void excluir(String username) {
+        var usuario = this.usuarioRepository.findByUsername(username).orElseThrow();
+        System.out.println(usuario);
+        this.usuarioRepository.delete(usuario);
+	}
+
 }

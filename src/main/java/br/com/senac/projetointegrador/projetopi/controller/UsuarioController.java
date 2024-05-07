@@ -47,5 +47,10 @@ public class UsuarioController {
     }	
 	
 	//excluir
+    @DeleteMapping("/{username}")
+    public ResponseEntity excluir (@PathVariable("username") String username) {
+        service.excluir(username);
+        return ResponseEntity.noContent().build();
+    }
 
 }
