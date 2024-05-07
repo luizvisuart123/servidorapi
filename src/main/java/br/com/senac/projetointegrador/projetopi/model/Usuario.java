@@ -14,6 +14,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import br.com.senac.projetointegrador.projetopi.enumerador.NivelAtividadeFisica;
 import br.com.senac.projetointegrador.projetopi.util.Pessoa;
 import lombok.AllArgsConstructor;
@@ -29,6 +31,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Where(clause = "active = true")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Usuario extends Pessoa implements UserDetails{
 	private static final long serialVersionUID = -6555643810426575027L;
 	

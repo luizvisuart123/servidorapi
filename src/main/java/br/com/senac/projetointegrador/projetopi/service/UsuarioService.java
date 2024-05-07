@@ -3,16 +3,15 @@ package br.com.senac.projetointegrador.projetopi.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 
 import br.com.senac.projetointegrador.projetopi.dto.UsuarioDTO;
 import br.com.senac.projetointegrador.projetopi.exception.NaoEncontradoException;
 import br.com.senac.projetointegrador.projetopi.model.Usuario;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
-import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
