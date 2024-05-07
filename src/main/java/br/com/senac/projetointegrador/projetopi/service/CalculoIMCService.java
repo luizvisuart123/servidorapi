@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.senac.projetointegrador.projetopi.dto.CalculoImcDTO;
 import br.com.senac.projetointegrador.projetopi.model.CalculoIMC;
-import br.com.senac.projetointegrador.projetopi.model.Usuario;
 import br.com.senac.projetointegrador.projetopi.repository.CalculoImcRepository;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CalculoIMCService {
 	private final ModelMapper modelMapper;
+	@SuppressWarnings("unused")
 	private final PasswordEncoder passwordEncoder;
 	private final CalculoImcRepository calculoImcRepository;
 	private final UsuarioRepository usuarioRepository;

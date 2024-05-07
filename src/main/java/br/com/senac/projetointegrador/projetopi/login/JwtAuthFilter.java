@@ -16,14 +16,13 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import br.com.senac.projetointegrador.projetopi.service.JwtService;
 import io.jsonwebtoken.io.IOException;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
 @Component
 @RequiredArgsConstructor
-@Log4j2
 public class JwtAuthFilter extends OncePerRequestFilter{
 	private final JwtService jwtService;
-    private final UserDetailsService userDetailsService;
+    @SuppressWarnings("unused")
+	private final UserDetailsService userDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
