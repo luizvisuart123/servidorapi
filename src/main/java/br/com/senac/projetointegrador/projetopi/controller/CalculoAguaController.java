@@ -46,8 +46,8 @@ public class CalculoAguaController {
     
 	//ler
 	@GetMapping("/usuario/{user_name}")
-    public List<CalculoAgua> listarCalculoImcUsuario(@PathVariable("user_name") String userName) {
-		return this.service.listarCalculoImcUsuario(userName).stream()
+    public List<CalculoAgua> listarCalculoAguaUsuario(@PathVariable("user_name") String userName) {
+		return this.service.listarCalculoAguaUsuario(userName).stream()
                 .collect(Collectors.toList());
     }
     

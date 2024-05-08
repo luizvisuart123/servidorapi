@@ -1,5 +1,6 @@
 package br.com.senac.projetointegrador.projetopi.service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,6 +49,11 @@ public class CalculoIMCService {
         var calculoImc = this.calculoImcRepository.findById(id).orElseThrow();
         System.out.println(calculoImc);
         this.calculoImcRepository.delete(calculoImc);
+	}
+
+	public Collection<CalculoImcDTO> listarCalculoAguaUsuario(String userName) {
+		var usuario = this.usuarioRepository.findByUsername(userName);
+		return calculoImcRepository.findByUsuario(usuario.orElseThrow());
 	}
 
 }

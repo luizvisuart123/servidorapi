@@ -9,7 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.senac.projetointegrador.projetopi.dto.CalculoAguaDTO;
-import br.com.senac.projetointegrador.projetopi.dto.CalculoImcDTO;
 import br.com.senac.projetointegrador.projetopi.model.CalculoAgua;
 import br.com.senac.projetointegrador.projetopi.repository.CalculoAguaRepository;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
@@ -53,9 +52,10 @@ public class CalculoAguaService {
         this.calculoAguaRepository.delete(calculoAgua);		
 	}
 
-	public List<CalculoAgua> listarCalculoImcUsuario(String userName) {
+	public List<CalculoAgua> listarCalculoAguaUsuario(String userName) {
 		var usuario = this.usuarioRepository.findByUsername(userName);
 		return calculoAguaRepository.findByUsuario(usuario.orElseThrow());
 	}
 
+	
 }
