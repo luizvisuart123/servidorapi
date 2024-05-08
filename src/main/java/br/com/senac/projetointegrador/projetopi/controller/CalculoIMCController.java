@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senac.projetointegrador.projetopi.dto.CalculoImcDTO;
-import br.com.senac.projetointegrador.projetopi.model.CalculoAgua;
 import br.com.senac.projetointegrador.projetopi.service.CalculoIMCService;
 import lombok.RequiredArgsConstructor;
 
