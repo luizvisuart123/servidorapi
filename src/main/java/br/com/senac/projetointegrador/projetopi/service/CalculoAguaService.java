@@ -46,4 +46,10 @@ public class CalculoAguaService {
                 .collect(Collectors.toList());
 	}
 
+	public void excluir(Long id) {
+        var calculoAgua = this.calculoAguaRepository.findById(id).orElseThrow();
+        System.out.println(calculoAgua);
+        this.calculoAguaRepository.delete(calculoAgua);		
+	}
+
 }
