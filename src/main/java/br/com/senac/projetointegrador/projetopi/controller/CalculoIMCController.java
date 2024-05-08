@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.senac.projetointegrador.projetopi.dto.CalculoImcDTO;
+import br.com.senac.projetointegrador.projetopi.model.CalculoAgua;
 import br.com.senac.projetointegrador.projetopi.service.CalculoIMCService;
 import lombok.RequiredArgsConstructor;
 
@@ -41,5 +42,12 @@ public class CalculoIMCController {
     public ResponseEntity<?> excluir (@PathVariable("id") Long id) {
         service.excluir(id);
         return ResponseEntity.noContent().build();
+    }
+    
+	//ler
+	@GetMapping("/usuario/{user_name}")
+    public List<CalculoImcDTO> listarCalculoAguaUsuario(@PathVariable("user_name") String userName) {
+		return this.service.listarCalculoAguaUsuario(userName).stream()
+                .collect(Collectors.toList());
     }
 }
