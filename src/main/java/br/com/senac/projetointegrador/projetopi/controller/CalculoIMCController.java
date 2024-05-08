@@ -35,7 +35,6 @@ public class CalculoIMCController {
 		return this.service.listarCalculoImc().stream()
                 .collect(Collectors.toList());
     }
-
 	
 	//excluir
     @DeleteMapping("/{id}")
