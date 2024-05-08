@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "27bfbc98-f502-4c73-a197-926605525135",
+		"name": "ProjetoSenac",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "http://localhost:8080/login_admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"user_admin\",\r\n \"password\":\"admin\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/login_cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"user_cliente\",\r\n \"password\":\"cliente\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "http://localhost:8080/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA5MzM2MSwiZXhwIjoxNzE1MDk2OTYxfQ.8-i-PT9URS9YPSpy4Xz87Zxok-KvvqbXJxfoWYLRKOk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/user_cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"user_cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA4NjczOSwiZXhwIjoxNzE1MDkwMzM5fQ.ZbZwO_19PSkRfKDFPpl6CmtSygcpP1T3X9zQotb5VUE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roles\": \"CLIENTE\",\r\n  \"username\":\"user_cliente\",\r\n  \"password\": \"cliente\",\r\n  \"nome\": \"Cliente da Silva\",\r\n  \"email\": \"cliente@gmail.com\",\r\n  \"peso\": 86,\r\n  \"altura\": 1.76,\r\n  \"nivelAtividadeFisica\": \"INTENSO\",\r\n  \"senha\": \"lapis123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios/user_cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"user_cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA5MzcwNCwiZXhwIjoxNzE1MDk3MzA0fQ.J9er_R5KN4ti2IbLoj-phM9UHCh5AMgi4uakzK8-jcA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"roles\": \"CLIENTE\",\r\n  \"username\":\"user_cliente\",\r\n  \"password\": \"cliente\",\r\n  \"nome\": \"Cliente da Silva\",\r\n  \"email\": \"cliente@gmail.com\",\r\n  \"peso\": 85,\r\n  \"altura\": 1.75,\r\n  \"nivelAtividadeFisica\": \"INTENSO\",\r\n  \"senha\": \"lapis123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA5MzcwNCwiZXhwIjoxNzE1MDk3MzA0fQ.J9er_R5KN4ti2IbLoj-phM9UHCh5AMgi4uakzK8-jcA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CalculoIMC",
+			"item": [
+				{
+					"name": "http://localhost:8080/calculo_imc",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTEwMjY2NSwiZXhwIjoxNzE1MTA2MjY1fQ.0B8UwUFRmDWzR-ggQONMEW4pagprbXmEZRsWI4yvuJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"username\":\"user_cliente\"\r\n},\r\n  \"dataCalculo\": \"2024-05-01\",\r\n  \"imc\": 40,\r\n  \"classificacaoIMC\": \"SOBREPESO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_imc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_imc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/calculo_imc",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA5MzM2MSwiZXhwIjoxNzE1MDk2OTYxfQ.8-i-PT9URS9YPSpy4Xz87Zxok-KvvqbXJxfoWYLRKOk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_imc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_imc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/calculo_imc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTEwNzk5NSwiZXhwIjoxNzE1MTExNTk1fQ.Gq5JdsXgTkcARQO95Ynm330W7Tz8PPgrgUgOEf7SxSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_imc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_imc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calculo Agua",
+			"item": [
+				{
+					"name": "http://localhost:8080/calculo_agua",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA5MzM2MSwiZXhwIjoxNzE1MDk2OTYxfQ.8-i-PT9URS9YPSpy4Xz87Zxok-KvvqbXJxfoWYLRKOk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_imc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_imc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/calculo_agua",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTEwNzk5NSwiZXhwIjoxNzE1MTExNTk1fQ.Gq5JdsXgTkcARQO95Ynm330W7Tz8PPgrgUgOEf7SxSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_imc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_imc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/calculo_agua",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTE4OTEyOSwiZXhwIjoxNzE1MTkyNzI5fQ.yYCZVd4yFARLITDheETOht1PJUErzcvsda5Dmfmt6O8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_agua/usuario/user_admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_agua",
+								"usuario",
+								"user_admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/calculo_agua",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTEwMjY2NSwiZXhwIjoxNzE1MTA2MjY1fQ.0B8UwUFRmDWzR-ggQONMEW4pagprbXmEZRsWI4yvuJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"username\":\"user_cliente\"\r\n},\r\n  \"dataCalculo\": \"2024-05-01\",\r\n  \"quantidadeIdealAgua\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculo_agua",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculo_agua"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
