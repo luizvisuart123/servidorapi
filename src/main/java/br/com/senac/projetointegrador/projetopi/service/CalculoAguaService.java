@@ -1,5 +1,8 @@
 package br.com.senac.projetointegrador.projetopi.service;
 
+import java.util.Collection;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -7,7 +10,6 @@ import org.springframework.stereotype.Service;
 import br.com.senac.projetointegrador.projetopi.dto.CalculoAguaDTO;
 import br.com.senac.projetointegrador.projetopi.dto.CalculoImcDTO;
 import br.com.senac.projetointegrador.projetopi.model.CalculoAgua;
-import br.com.senac.projetointegrador.projetopi.model.CalculoIMC;
 import br.com.senac.projetointegrador.projetopi.repository.CalculoAguaRepository;
 import br.com.senac.projetointegrador.projetopi.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -36,6 +38,12 @@ public class CalculoAguaService {
         calculoAgua.setUsuario(usuario.orElseThrow());
         var savedCalculoAgua = this.calculoAguaRepository.save(calculoAgua);
         return this.convertDto(savedCalculoAgua);
+	}
+
+	public Collection<CalculoAguaDTO> listarCalculoImc() {
+        return this.calculoAguaRepository.findAll().stream()
+                .map(this::convertDto)
+                .collect(Collectors.toList());
 	}
 
 }
