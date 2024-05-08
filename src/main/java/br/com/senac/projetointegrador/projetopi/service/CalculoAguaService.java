@@ -1,6 +1,7 @@
 package br.com.senac.projetointegrador.projetopi.service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -50,6 +51,11 @@ public class CalculoAguaService {
         var calculoAgua = this.calculoAguaRepository.findById(id).orElseThrow();
         System.out.println(calculoAgua);
         this.calculoAguaRepository.delete(calculoAgua);		
+	}
+
+	public List<CalculoAgua> listarCalculoImcUsuario(String userName) {
+		var usuario = this.usuarioRepository.findByUsername(userName);
+		return calculoAguaRepository.findByUsuario(usuario.orElseThrow());
 	}
 
 }
