@@ -15,8 +15,8 @@ import br.com.senac.projetointegrador.projetopi.service.JwtService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/login")
 @RequiredArgsConstructor
+@RequestMapping("login")
 public class AuthRestController {
 	
 	private final UsuarioRepository usuarioRepository;
