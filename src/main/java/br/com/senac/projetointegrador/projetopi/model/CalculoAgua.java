@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.senac.projetointegrador.projetopi.enumerador.NivelAtividadeFisica;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -40,5 +43,22 @@ public class CalculoAgua {
 
     @Column(name = "quantidade_ideal_agua", nullable = false)
     private Double quantidadeIdealAgua;
+    
+    @Column(name = "horas_diaria_execicio", nullable = false)
+    private int horasExercicioFisico; 
+    
+    @Column(name = "clima", nullable = false)
+    private boolean clima;
+    
+    @Column(name = "peso", nullable = false)
+    private Double peso;
+    
+    @Column(name = "idade", nullable = false)
+    private int idade;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nivel_atividade_fisica", nullable = false)	
+    private NivelAtividadeFisica nivelAtividadeFisica;
+    
 
 }

@@ -1,6 +1,7 @@
 package br.com.senac.projetointegrador.projetopi.model;
 
 import java.util.Arrays;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -51,8 +52,11 @@ public class Usuario extends Pessoa implements UserDetails{
     @Column(name = "altura", nullable = false)
     private Double altura;
     
+    @Column(name = "data_nascimento", nullable = false)	
+    private LocalDate dataNascimento;
+    
     @Enumerated(EnumType.STRING)
-    @Column(name = "nivel_atividade_fisica", nullable = false)
+    @Column(name = "nivel_atividade_fisica", nullable = false)	
     private NivelAtividadeFisica nivelAtividadeFisica;
     
 	

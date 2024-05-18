@@ -10,7 +10,8 @@ insert into usuario (
 	nome,
 	peso,
 	altura,
-	nivel_atividade_fisica
+	nivel_atividade_fisica,
+	data_nascimento
 ) VALUES (
 	false,
 	false,
@@ -23,7 +24,8 @@ insert into usuario (
 	'Administrador',
 	110,
 	175,
-	'leve'
+	'leve',
+	'1977-08-16'
 );
 
 INSERT INTO nivel_atividade_fisica (descricao) VALUES ('Leve');

@@ -35,8 +35,13 @@ public class CalculoAguaService {
 	public CalculoAguaDTO salvar(CalculoAguaDTO dto) {
         var calculoAgua = this.convertFromDto(dto);
         var usuario = this.usuarioRepository.findByUsername(dto.getUsuario().getUsername());
+        
         calculoAgua.setUsuario(usuario.orElseThrow());
+        double quantidadeAguaDiaria = CalculadoraAgua.calcular(calculoAgua);
+        dto.setQuantidadeIdealAgua(quantidadeAguaDiaria);
+        
         var savedCalculoAgua = this.calculoAguaRepository.save(calculoAgua);
+        
         return this.convertDto(savedCalculoAgua);
 	}
 

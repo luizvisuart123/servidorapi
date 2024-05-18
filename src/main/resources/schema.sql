@@ -12,6 +12,7 @@ create table usuario (
 	peso DOUBLE NOT NULL,
     altura DOUBLE NOT NULL,
     nivel_atividade_fisica ENUM('LEVE', 'MODERADO', 'INTENSO') NOT NULL,
+    data_nascimento DATE NOT NULL,
 	primary key (id)
 );
 alter table usuario add constraint UK_692bsnqxa8m9fmx7m1yc6hsui unique (email);
@@ -24,7 +25,12 @@ CREATE TABLE calculos_agua (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     usuario_id BIGINT NOT NULL,
     data_calculo DATE NOT NULL,
-    quantidade_ideal_agua DOUBLE NOT NULL
+    quantidade_ideal_agua DOUBLE NOT NULL,
+    clima BOOLEAN DEFAULT FALSE,
+    horas_diaria_execicio INT NOT NULL,
+    peso DOUBLE NOT NULL,
+    idade INT NOT NULL,
+    nivel_atividade_fisica ENUM('LEVE', 'MODERADO', 'INTENSO') NOT NULL
 );
 
 CREATE TABLE calculos_imc (

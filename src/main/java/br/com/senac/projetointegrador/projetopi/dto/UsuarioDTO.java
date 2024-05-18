@@ -1,5 +1,7 @@
 package br.com.senac.projetointegrador.projetopi.dto;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -32,5 +34,6 @@ public class UsuarioDTO {
     @Enumerated(EnumType.STRING)
     @Column(name = "nivel_atividade_fisica", nullable = false)
     private NivelAtividadeFisica nivelAtividadeFisica;	
+    private LocalDate dataNascimento;
 
 }
