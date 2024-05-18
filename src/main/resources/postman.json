@@ -155,7 +155,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTA5MzcwNCwiZXhwIjoxNzE1MDk3MzA0fQ.J9er_R5KN4ti2IbLoj-phM9UHCh5AMgi4uakzK8-jcA",
+									"value": "/h2-console",
 									"type": "string"
 								}
 							]
@@ -164,7 +164,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"roles\": \"CLIENTE\",\r\n  \"username\":\"user_cliente\",\r\n  \"password\": \"cliente\",\r\n  \"nome\": \"Cliente da Silva\",\r\n  \"email\": \"cliente@gmail.com\",\r\n  \"peso\": 85,\r\n  \"altura\": 1.75,\r\n  \"nivelAtividadeFisica\": \"INTENSO\",\r\n  \"senha\": \"lapis123\"\r\n}",
+							"raw": "{\r\n  \"roles\": \"CLIENTE\",\r\n  \"username\":\"user_cliente\",\r\n  \"password\": \"cliente\",\r\n  \"nome\": \"Cliente da Silva\",\r\n  \"email\": \"cliente@gmail.com\",\r\n  \"peso\": 85,\r\n  \"altura\": 1.75,\r\n  \"nivelAtividadeFisica\": \"INTENSO\",\r\n  \"senha\": \"lapis123\",\r\n  \"dataNascimento\":\"1974-08-24\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -483,7 +483,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNTEwMjY2NSwiZXhwIjoxNzE1MTA2MjY1fQ.0B8UwUFRmDWzR-ggQONMEW4pagprbXmEZRsWI4yvuJo",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IkFETUlOIiwic3ViIjoidXNlcl9hZG1pbiIsImlhdCI6MTcxNjA0MTc2MiwiZXhwIjoxNzE2MDQ1MzYyfQ.zTIMiFOiulYEyW9eDHabGjMQZAIp9FwhnrS49FATZqY",
 									"type": "string"
 								}
 							]
@@ -492,7 +492,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"usuario\": {\r\n    \"username\":\"user_cliente\"\r\n},\r\n  \"dataCalculo\": \"2024-05-01\",\r\n  \"quantidadeIdealAgua\": 3\r\n}",
+							"raw": "{\r\n  \"usuario\": {\r\n    \"username\":\"user_admin\"\r\n},\r\n  \"dataCalculo\": \"2024-05-01\",\r\n  \"quantidadeIdealAgua\": 3,\r\n  \"clima\": true,\r\n  \"horasExercicioFisico\":3,\r\n  \"peso\":120,\r\n  \"nivelAtividadeFisica\": \"INTENSO\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
