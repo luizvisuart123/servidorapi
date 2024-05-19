@@ -1,10 +1,13 @@
 package br.com.senac.projetointegrador.projetopi.enumerador;
 
 public enum ClassificacaoIMC {
-    ABAIXO_DO_PESO("Abaixo do peso"),
-    PESO_NORMAL("Peso normal"),
-    SOBREPESO("Sobrepeso"),
-    OBESIDADE("Obesidade");
+	MAGREZA("Magreza"),
+	NORMAL("Normal"),
+	SOBREPESO("Sobrepeso"),
+    OBESIDADE1("Obesidade grau I"),
+    OBESIDAD2("Obesidade grau II"),
+    OBESIDADE3("Obesidade grau III");
+	
 
     private final String descricao;
 
@@ -13,6 +16,8 @@ public enum ClassificacaoIMC {
     }
 
     public String getDescricao() {
+    	System.out.println(descricao);
         return descricao;
     }
+
 }

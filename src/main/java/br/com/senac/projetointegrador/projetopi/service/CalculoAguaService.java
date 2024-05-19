@@ -38,7 +38,7 @@ public class CalculoAguaService {
         
         calculoAgua.setUsuario(usuario.orElseThrow());
         double quantidadeAguaDiaria = CalculadoraAgua.calcular(calculoAgua);
-        dto.setQuantidadeIdealAgua(quantidadeAguaDiaria);
+        calculoAgua.setQuantidadeIdealAgua(quantidadeAguaDiaria);
         
         var savedCalculoAgua = this.calculoAguaRepository.save(calculoAgua);
         
