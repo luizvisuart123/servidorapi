@@ -4,6 +4,8 @@
 # Projeto API
 ---
 
+Usuário: user_admin
+senha: admin
 
 O **Projeto API** é um aplicativo Java backend baseado em Spring Boot que utiliza um banco de dados em memória H2. Ele foi desenvolvido com as seguintes tecnologias:
 
